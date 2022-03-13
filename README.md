@@ -13,8 +13,11 @@ ciencias de la computación.
 
 ### Uso
 
-`chmod +x script.sh`
-`./script.sh`
+```
+chmod +x script.sh
+
+./script.sh
+```
 
 #### Notas
 
