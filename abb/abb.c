@@ -3,6 +3,7 @@
 
 #include "abb.h"
 
+// Funciones basicas ABB
 Abb crear_nodo(int valor) {
   Abb nodo = (Abb) malloc(sizeof(struct NODO));
   nodo->izq = NULL;
@@ -12,12 +13,23 @@ Abb crear_nodo(int valor) {
 }
 
 void insertar_abb(Abb *raiz, int valor) {
-  if(*raiz == NULL)
-    *raiz = crear_nodo(valor);  
-  else if(valor < (*raiz)->valor)
-    insertar_abb(&(*raiz)->izq, valor);
-  else
-    insertar_abb(&(*raiz)->der, valor);
+  Abb nodo = crear_nodo(valor);
+  if(*raiz == NULL) 
+    *raiz = nodo;
+  else {
+    Abb p = *raiz, q;
+    while(p != NULL) {
+      q = p;
+      if(valor < p->valor)
+        p = p->izq;
+      else
+        p = p->der;
+    }
+    if(valor < q->valor)
+      q->izq = nodo;
+    else
+      q->der = nodo;
+  }
 }
 
 void liberar_arbol(Abb *raiz) {
@@ -54,3 +66,31 @@ void imprimir_post_orden(Abb arbol) {
 }
 
 Abb nuevo_arbol() { return NULL; }
+
+// Funciones para uso en la practica
+
+void guardar_arreglo(Abb arbol, int *arr, int *i) {
+  if(arbol != NULL) {
+    guardar_arreglo(arbol->izq, arr, i);
+    arr[*i] = arbol->valor;
+    (*i)++;
+    guardar_arreglo(arbol->der, arr, i);
+  }
+}
+
+Abb insertar_arreglo(int *arr, int len) {
+  Abb arbol = nuevo_arbol();
+  int i;
+  for(i = 0; i < len; i++)
+    insertar_abb(&arbol, arr[i]);
+  return arbol;
+}
+
+// La funcion de ordenamiento regresa el arbol para 
+// poder liberar memoria creada despues de ordenar el arreglo
+Abb ordenar_abb(int *arr, int len) {
+  Abb arbol = insertar_arreglo(arr, len);
+  int i = 0;
+  guardar_arreglo(arbol, arr, &i);
+  return arbol;
+}

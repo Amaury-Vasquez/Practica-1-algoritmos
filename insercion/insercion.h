@@ -1,0 +1,1 @@
+void insercion(int *, int);

@@ -3,7 +3,7 @@
 
 #include "tiempo/tiempo.h"
 #include "imprime_numeros.h"
-#include "burbuja/burbuja.h"
+#include "insercion/insercion.h"
 #include "leer_numeros/leer_numeros.h"
 
 int main(int argc, char *argv[]) {
@@ -15,17 +15,16 @@ int main(int argc, char *argv[]) {
   // Declaracion/Inicializacion de variables
   double utime0, stime0, wtime0,utime1, stime1, wtime1;
   int *arr, n = atoi(argv[1]);
-  arr = genera_arreglo(n);
+  arr = generar_arreglo(n);
   // Entrada de datos en el arreglo
-  lee_numeros(arr, n);
+  leer_numeros(arr, n);
 
   // Inicia conteo del tiempo
   uswtime(&utime0, &stime0, &wtime0);
   // Ejecucion algoritmo
-  burbuja(arr, n);
   // Termina conteo del tiempo
   uswtime(&utime1, &stime1, &wtime1);
-  
+
   //Cálculo del tiempo de ejecución del programa
 	printf("\t\t\t\t%d numeros\n\n", n);
 	printf("real (Tiempo total)  %.10f s\n",  wtime1 - wtime0);
@@ -42,6 +41,6 @@ int main(int argc, char *argv[]) {
 	printf("\n\n");
   
   // Liberacion memoria
-  libera_arreglo(arr);
+  liberar_arreglo(arr);
   return 0;
 }

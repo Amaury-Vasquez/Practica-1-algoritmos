@@ -3,12 +3,12 @@
 
 #include "leer_numeros.h"
 
-int *genera_arreglo(int n) {
+int *generar_arreglo(int n) {
   int *arr = (int *) malloc(sizeof(int) * n);
   return arr;
 }
 
-void lee_numeros(int *arr, int n) {
+void leer_numeros(int *arr, int n) {
   int i, valor;
   for(i = 0; i < n; i++) {
     scanf("%d", &valor);
@@ -16,6 +16,6 @@ void lee_numeros(int *arr, int n) {
   }
 }
 
-void libera_arreglo(int *arr) {
+void liberar_arreglo(int *arr) {
   free(arr);
 }

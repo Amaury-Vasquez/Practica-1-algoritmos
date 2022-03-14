@@ -1,3 +1,3 @@
-int *genera_arreglo(int);
-void lee_numeros(int *, int);
-void libera_arreglo(int *);
+int *generar_arreglo(int);
+void leer_numeros(int *, int);
+void liberar_arreglo(int *);

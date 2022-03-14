@@ -17,6 +17,7 @@ Abb nuevo_arbol();
 // ****
 
 // Funciones para uso en la practica
-Abb insertar_arreglo(int *, int);\
-void guardar_en_orden(Abb, int *);
+void guardar_arreglo(Abb, int *, int *);
+Abb insertar_arreglo(int *, int);
+Abb ordenar_abb(int *, int);
 // **** 
