@@ -1,0 +1,1 @@
+void seleccion(int *, int);

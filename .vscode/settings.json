@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "abb.h": "c"
+    "abb.h": "c",
+    "leer_numeros.h": "c",
+    "seleccion.h": "c"
   }
 }
