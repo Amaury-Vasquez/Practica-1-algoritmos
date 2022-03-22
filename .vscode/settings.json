@@ -4,6 +4,7 @@
     "leer_numeros.h": "c",
     "seleccion.h": "c",
     "shellsort.h": "c",
-    "mergesort.h": "c"
+    "mergesort.h": "c",
+    "burbuja.h": "c"
   }
 }

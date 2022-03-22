@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "tiempo/tiempo.h"
-#include "quicksort/quicksort.h"
+#include "insercion/insercion.h"
 #include "leer_numeros/leer_numeros.h"
 
 int main(int argc, char *argv[]) {
@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
   // Inicia conteo del tiempo
   uswtime(&utime0, &stime0, &wtime0);
   // Ejecucion algoritmo
-  quicksort(arr, 0, n - 1);
+  insercion(arr, n);
   // Termina conteo del tiempo
   uswtime(&utime1, &stime1, &wtime1);
 
