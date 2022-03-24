@@ -5,6 +5,7 @@
     "seleccion.h": "c",
     "shellsort.h": "c",
     "mergesort.h": "c",
-    "burbuja.h": "c"
+    "burbuja.h": "c",
+    "quicksort.h": "c"
   }
 }

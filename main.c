@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "tiempo/tiempo.h"
-#include "insercion/insercion.h"
+#include "shellsort/shellsort.h"
 #include "leer_numeros/leer_numeros.h"
 
 int main(int argc, char *argv[]) {
@@ -17,11 +17,11 @@ int main(int argc, char *argv[]) {
   arr = generar_arreglo(n);
   // Entrada de datos en el arreglo
   leer_numeros(arr, n);
-
+  
   // Inicia conteo del tiempo
   uswtime(&utime0, &stime0, &wtime0);
   // Ejecucion algoritmo
-  insercion(arr, n);
+  shellsort(arr, n);
   // Termina conteo del tiempo
   uswtime(&utime1, &stime1, &wtime1);
 

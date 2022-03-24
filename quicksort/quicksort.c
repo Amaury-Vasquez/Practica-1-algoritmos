@@ -1,10 +1,4 @@
 #include "quicksort.h"
-
-void intercambia(int a, int b) {
-    int t = a;
-    a = b;
-    b = t;
-}
  
 int dividir (int *arr, int low, int high) {
     int pivot = arr[high];
