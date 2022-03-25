@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "tiempo/tiempo.h"
-#include "shellsort/shellsort.h"
+#include "heap/heap.h"
 #include "leer_numeros/leer_numeros.h"
 
 int main(int argc, char *argv[]) {
@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
   // Inicia conteo del tiempo
   uswtime(&utime0, &stime0, &wtime0);
   // Ejecucion algoritmo
-  shellsort(arr, n);
+  heap_sort(arr, n);
   // Termina conteo del tiempo
   uswtime(&utime1, &stime1, &wtime1);
 
