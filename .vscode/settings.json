@@ -7,6 +7,7 @@
     "mergesort.h": "c",
     "burbuja.h": "c",
     "quicksort.h": "c",
-    "insercion.h": "c"
+    "insercion.h": "c",
+    "heap.h": "c"
   }
 }

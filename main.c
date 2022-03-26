@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "tiempo/tiempo.h"
-#include "heap/heap.h"
+#include "abb/abb.h"
 #include "leer_numeros/leer_numeros.h"
 
 int main(int argc, char *argv[]) {
@@ -21,12 +21,12 @@ int main(int argc, char *argv[]) {
   // Inicia conteo del tiempo
   uswtime(&utime0, &stime0, &wtime0);
   // Ejecucion algoritmo
-  heap_sort(arr, n);
+  Abb arbol = ordenar_abb(arr, n);
   // Termina conteo del tiempo
   uswtime(&utime1, &stime1, &wtime1);
 
   //Cálculo del tiempo de ejecución del programa
-	printf("\t\t\t\t%d numeros\n\n", n);
+	printf("\t\t\t\t abb \n\n");
 	printf("real (Tiempo total)  %.10f s\n",  wtime1 - wtime0);
 	printf("user (Tiempo de procesamiento en CPU) %.10f s\n",  utime1 - utime0);
 	printf("sys (Tiempo en acciónes de E/S)  %.10f s\n",  stime1 - stime0);
@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
 	printf("\n\n");
   
   // Liberacion memoria
+  liberar_arbol(&arbol);
   liberar_arreglo(arr);
   return 0;
 }
